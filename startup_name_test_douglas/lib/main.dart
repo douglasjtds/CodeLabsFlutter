@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
 
     final List<WordPair> _suggestions = <WordPair>[];
-    var wordPairs = WordPair.random();
+    // var wordPairs = WordPair.random();
     var textStyle = TextStyle(fontSize: 18);
 
     return Scaffold(
