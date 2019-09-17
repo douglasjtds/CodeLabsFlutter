@@ -26,31 +26,27 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-
     final List<WordPair> _suggestions = <WordPair>[];
     // var wordPairs = WordPair.random();
     var textStyle = TextStyle(fontSize: 18);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("KT Flutter"),
+        title: Text("Startup Name Generator"),
       ),
-
-      body: ListView.builder(
-        itemBuilder: (context, i){
-
-          if (i >= _suggestions.length){
-            _suggestions.addAll(generateWordPairs().take(10));
-          }
-
-          return ListTile(
-            trailing: Icon(Icons.smoking_rooms),
-            title: Text(_suggestions[i].asPascalCase, style: textStyle,),
-          );
+      body: ListView.builder(itemBuilder: (context, i) {
+        if (i >= _suggestions.length) {
+          _suggestions.addAll(generateWordPairs().take(10));
         }
-        
-      ),
 
+        return ListTile(
+          trailing: Icon(Icons.smoking_rooms),
+          title: Text(
+            _suggestions[i].asPascalCase,
+            style: textStyle,
+          ),
+        );
+      }),
     );
   }
 }
